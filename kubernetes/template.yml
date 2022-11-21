@@ -1,0 +1,342 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext766
+  labels:
+    app: BoundedContext766
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext766
+  template:
+    metadata:
+      labels:
+        app: BoundedContext766
+    spec:
+      containers:
+        - name: BoundedContext766
+          image: username/BoundedContext766:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext223
+  labels:
+    app: BoundedContext223
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext223
+  template:
+    metadata:
+      labels:
+        app: BoundedContext223
+    spec:
+      containers:
+        - name: BoundedContext223
+          image: username/BoundedContext223:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext1156
+  labels:
+    app: BoundedContext1156
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext1156
+  template:
+    metadata:
+      labels:
+        app: BoundedContext1156
+    spec:
+      containers:
+        - name: BoundedContext1156
+          image: username/BoundedContext1156:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext2678.3333333333335
+  labels:
+    app: BoundedContext2678.3333333333335
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext2678.3333333333335
+  template:
+    metadata:
+      labels:
+        app: BoundedContext2678.3333333333335
+    spec:
+      containers:
+        - name: BoundedContext2678.3333333333335
+          image: username/BoundedContext2678.3333333333335:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext1111.6666666666667
+  labels:
+    app: BoundedContext1111.6666666666667
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext1111.6666666666667
+  template:
+    metadata:
+      labels:
+        app: BoundedContext1111.6666666666667
+    spec:
+      containers:
+        - name: BoundedContext1111.6666666666667
+          image: username/BoundedContext1111.6666666666667:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BoundedContext583.6734693877551
+  labels:
+    app: BoundedContext583.6734693877551
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BoundedContext583.6734693877551
+  template:
+    metadata:
+      labels:
+        app: BoundedContext583.6734693877551
+    spec:
+      containers:
+        - name: BoundedContext583.6734693877551
+          image: username/BoundedContext583.6734693877551:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext766
+  labels:
+    app: BoundedContext766
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext766
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext223
+  labels:
+    app: BoundedContext223
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext223
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext1156
+  labels:
+    app: BoundedContext1156
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext1156
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext2678.3333333333335
+  labels:
+    app: BoundedContext2678.3333333333335
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext2678.3333333333335
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext1111.6666666666667
+  labels:
+    app: BoundedContext1111.6666666666667
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext1111.6666666666667
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BoundedContext583.6734693877551
+  labels:
+    app: BoundedContext583.6734693877551
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BoundedContext583.6734693877551
+

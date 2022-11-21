@@ -1,0 +1,98 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: BoundedContext766
+          uri: http://localhost:8081
+          predicates:
+            - Path=/결재/**, 
+        - id: BoundedContext223
+          uri: http://localhost:8082
+          predicates:
+            - Path=/주문처리/**, 
+        - id: BoundedContext1156
+          uri: http://localhost:8083
+          predicates:
+            - Path=/배달관리/**, 
+        - id: BoundedContext2678.3333333333335
+          uri: http://localhost:8084
+          predicates:
+            - Path=/알림/**, 
+        - id: BoundedContext1111.6666666666667
+          uri: http://localhost:8085
+          predicates:
+            - Path=/메뉴선택Preferences/**, 
+        - id: BoundedContext583.6734693877551
+          uri: http://localhost:8086
+          predicates:
+            - Path=/주문/**, /메뉴판/**
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: BoundedContext766
+          uri: http://boundedContext766:8080
+          predicates:
+            - Path=/결재/**, 
+        - id: BoundedContext223
+          uri: http://boundedContext223:8080
+          predicates:
+            - Path=/주문처리/**, 
+        - id: BoundedContext1156
+          uri: http://boundedContext1156:8080
+          predicates:
+            - Path=/배달관리/**, 
+        - id: BoundedContext2678.3333333333335
+          uri: http://boundedContext2678_3333333333335:8080
+          predicates:
+            - Path=/알림/**, 
+        - id: BoundedContext1111.6666666666667
+          uri: http://boundedContext1111_6666666666667:8080
+          predicates:
+            - Path=/메뉴선택Preferences/**, 
+        - id: BoundedContext583.6734693877551
+          uri: http://boundedContext583_6734693877551:8080
+          predicates:
+            - Path=/주문/**, /메뉴판/**
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080

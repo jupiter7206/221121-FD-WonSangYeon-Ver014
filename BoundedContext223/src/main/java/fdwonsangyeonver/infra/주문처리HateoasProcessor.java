@@ -1,0 +1,19 @@
+package fdwonsangyeonver.infra;
+import fdwonsangyeonver.domain.*;
+
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.RepresentationModelProcessor;
+import org.springframework.stereotype.Component;
+import org.springframework.hateoas.EntityModel;
+
+@Component
+public class 주문처리HateoasProcessor implements RepresentationModelProcessor<EntityModel<주문처리>>  {
+
+    @Override
+    public EntityModel<주문처리> process(EntityModel<주문처리> model) {
+
+        
+        return model;
+    }
+    
+}
